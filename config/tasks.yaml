@@ -1,0 +1,31 @@
+query_classification_task:
+  description: >
+    Analyze the statement: #{query}# and classify it into the following classes Agriculture_Heatmap,Agriculture_Trends,Rural_Development based on given {class_descriptions}.
+  expected_output: >
+    A single class name ##STRICTLY## picked a only from [Agriculture_Heatmap,Agriculture_Trends,Rural_Development] for  the  best represents the user's query in output.
+
+data_extraction_task:
+  description: >
+    "You will receive a user's query about the data, which may not be well-formulated or may contain incorrect column names."
+    "Your job is to understand the intent of the query, identify and correct any potential mistakes in the column names, "
+    "translate the query into a valid pandas query, read the CSV file {file_name}, execute the query, and provide the results."
+    "Your response should include the corrected query and the resulting data."
+  expected_output: >
+    resulting data from the CSV file based on the user query to embed in the streamlit chat dataframe.
+
+visualization_task:
+  description: >
+    "You will receive a user's query: {query} about the data, which may not be well-formulated or may contain incorrect column names."
+    "Your job is to understand the intent of the query, identify and correct any potential mistakes in the column names, "
+    "translate the query into a valid pandas query,
+    Create a visualization using the ploty to embed in the streamlit chat app in response to the user query based on the {file_name} . 
+    "Please generate a Streamlit app code that does not include the set_page_config() function.
+    and also provide the data to display along with the chart in streamlit app side by side in same width."
+    "always add a tab in the code to display the chart in one tab and data in another tab."
+    "always make sure the data is compared on the right unit. use is different color or face in chart if required for the data on the different units."
+    "in the chart for multi unit data always subplots side by side for each unit ."
+    "always understand the categories of kike crop types for each indicator names and try to make the sense of of types"
+    Your output must be a valid JSON object that follows this schema: "
+    "example should by code, dataframe, and explanation"
+  expected_output: >
+    expected_output= all the details of the code , dataframe and analytical explaination only about the data not on the chart or streamlit 
