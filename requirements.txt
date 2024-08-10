@@ -1,9 +1,5 @@
-python==3.10
-crewai-tools
-pandas
-json
 streamlit
+pandas
 plotly==5.23.0
-yaml
 pydantic
-request
+requests
