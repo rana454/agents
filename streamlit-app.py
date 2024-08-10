@@ -23,9 +23,6 @@ from crewai_tools import tool
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
-from crew import Agent, Task, Crew, Process
-
-
 # Define the function to create an Insight Aggregator Agent
 def create_insight_aggregator_agent():
     return Agent(
