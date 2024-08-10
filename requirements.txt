@@ -1,4 +1,6 @@
 streamlit
+crewai 
+crewai-tools
 pandas
 plotly==5.23.0
 pydantic
