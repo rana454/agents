@@ -3,4 +3,4 @@ pandas
 plotly==5.23.0
 pydantic
 requests
-yaml
+PyYAML==6.0.1
